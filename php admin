@@ -2,4 +2,15 @@ Instalando o php postgres admin (interface que ajuada a manipular o postgres)
 
 sudo apt-get install phppgadmin
 
-sudo nano vi /etc/apache2/conf.d/phppgadmin
+acessando as configurações do phpadmin para definir as redes que poderam acessar:
+1 etapa, digite: cd etc/apache2/conf-available/ 
+2 etapa, digite: sudo vim phppgadmin.conf 
+3 etapa: ao abrir as configurações comente o 'Require local' com # e logo abaixo digite 'Allow From all'
+4 etapa: depois de digitar o 'Allow From all' aperte 'ESC' e digite ':wq' para salvar
+5 etapa, digite: sudo vim config.inc.php e procure por $conf['extra_login_security'] = false; (ele vai estar true por padrao, coloque false), isso é para podermos acessar o phppgadmin sem precisar de senha
+6 etapa, digite: systemctl restart postgresql
+7 etapa, digite: systemctl restart apache2
+8 etapa, abra uma aba do navegador e digite: http://199.160.10.1/phppgadmin/ (o ip é da sua internet !)
+9 etapa, usuario e senha: usuario postgres e a senha é a que definimos !
+
+fonte: https://www.youtube.com/watch?v=yOS8goiZZgk
