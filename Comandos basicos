@@ -1,4 +1,6 @@
-sudo -u postgres psql postgres -> ve a versão e loga no postgres com senha
+psql --version -> ver a versão do postgres
+
+sudo -u postgres psql postgres -> loga no postgres com senha
 
 \password postgres -> para dar ao usuario padrao do postgres uma senha
 
