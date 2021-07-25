@@ -1,0 +1,33 @@
+observação interessante: quando tiver '=#' isso significa um super usuario !
+
+sudo -i -u postgres -> loga com o usuario 'postgres' que tem permissão para tudo, depois digite 'psql' e coloque a senha e pronto logou no postgres
+
+Para sair dos comandos aperte a telca 'Q'
+
+\h -> mostra os comandos disponiveis
+
+\h create role -> quando colocamos o comando na frente o \h ele traz especificações desse comando
+
+\? -> mostra os comandos internos do psql 
+
+\l -> para ver os bancos de dados criados
+
+\dt -> mostra as tabelas que existem em um determinado banco de dados criado
+
+\du -> mostra os usuarios 
+
+\c nomeDoBanco -> para conectar a um banco de dados que queira (ele tem que existir)
+
+\d -> quando tiver conectado ao um banco de dados ele mostra as tabelas criadas
+
+\dS -> quando tiver conectado ao um banco de dados ele mostra as tabelas criadas no catalogo postgres (tabelas adminstrativas)
+
+\connect dbnome -> para se conectar ao banco de dados postgres criado
+
+\! -> volta para o terminal padrao do psql (caso usar \! e querer voltar para tabela que estava escreva 'exit' e ele volta aonde tava)
+
+\! date -> caso não queira sair com o terminal conectado no banco de dados é só digiar \! e o comando que ele executa sem sair
+
+\q -> sai do psql
+
+\which psql -> mostra aonde o psql esta instalado
