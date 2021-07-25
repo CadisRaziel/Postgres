@@ -1,0 +1,29 @@
+sudo -u postgres psql postgres -> ve a versão e loga no postgres com senha
+
+\password postgres -> para dar ao usuario padrao do postgres uma senha
+
+CREATE EXTENSION adminpack -> a gente instala o admin pack apenas uma vez, ele serve para trazer ferramentas para adminstração do bando de dados
+
+\q -> sai do terminal postgres e volta pro terminal normal
+
+sudo -u postgres createuser -D -A -P vitorcadis -> cria um novo usuario para o postgres (repare que nao precisei logar no postgres para cria-lo)
+*vitorcadis* é o nome do usuario que eu criei para min
+
+sudo -u postgres createdb -O vitorcadis dbnome -> criar um novo banco de dados (repare que nao precisei logar no postgres para cria-lo)
+*vitorcadis* é o nome do usuario que eu criei para min
+
+DROP DATABASE nomedb -> exclui uma database (precisa logar no postgres)
+
+DROP USER nomeUser -> exclui um usuario (precisa logar no postgres)
+
+sudo nano /etc/postgresql/13/main/postgresql.conf -> para conseguirmos acessar a configuração tcpip para fazer acesso remoto  (repare que nao precisei logar para usa-lo)
+ao acessar o etc va ate 'listen_adresses' e descomente ela, e tire o 'localhost' e coloque '*' para qualquer pc conseguir acessar ela.
+
+service postgresql restart -> para reiniciar o sistema postgres (repare que nao precisei logar para usa-lo)
+
+\l -> para ver os bancos de dados criados
+
+\dt -> mostra as tabelas que existem em um determinado banco de dados criado
+
+\connect dbnome -> para se conectar ao banco de dados postgres criado
+
