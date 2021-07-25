@@ -11,6 +11,7 @@ acessando as configurações do phpadmin para definir as redes que poderam acess
 6 etapa, digite: systemctl restart postgresql
 7 etapa, digite: systemctl restart apache2
 8 etapa, abra uma aba do navegador e digite: http://199.160.10.1/phppgadmin/ (o ip é da sua internet !)
-9 etapa, usuario e senha: usuario postgres e a senha é a que definimos !
+9 etapa, usuario e senha: usuario vitorcadis e a senha é a que definimos !
+(usuario vitorcadis foi o que eu criei para min la no postgres via terminal)
 
 fonte: https://www.youtube.com/watch?v=yOS8goiZZgk
