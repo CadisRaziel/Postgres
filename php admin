@@ -1,0 +1,3 @@
+Instalando o php postgres admin (interface que ajuada a manipular o postgres)
+
+sudo apt-get install phppgadmin
