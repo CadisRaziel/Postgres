@@ -1,0 +1,16 @@
+Conecte no psql e digite com o usuario postgres -> show hba_file; (para mostrar o caminho de onde estar o hba)
+
+para acessar o caminho mostrado no hba_file -> sudo nano /etc/postgresql/12/main/pg_hba.conf
+
+altere o 'peer' para md5:
+# Database administrative login by Unix domain socket
+local   all             postgres                    md5 <-(aqui vem como peer por default)
+
+
+
+
+obs os metodos que podemos usar para logar no psql :
+# METHOD can be "trust", "reject", "md5", "password", "scram-sha-256",
+# "gss", "sspi", "ident", "peer", "pam", "ldap", "radius" or "cert".
+# Note that "password" sends passwords in clear text; "md5" or
+# "scram-sha-256" are preferred since they send encrypted passwords.
