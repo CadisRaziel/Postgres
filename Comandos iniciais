@@ -1,6 +1,6 @@
 observação interessante: quando tiver '=#' isso significa um super usuario !
 
-sudo -i -u postgres -> loga com o usuario 'postgres' que tem permissão para tudo, depois digite 'psql' e coloque a senha e pronto logou no postgres
+sudo -i -u postgres ou psql -U postgres -> loga com o usuario 'postgres' que tem permissão para tudo, depois digite 'psql' e coloque a senha e pronto logou no postgres
 
 Para sair dos comandos aperte a telca 'Q'
 
