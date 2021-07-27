@@ -1,0 +1,34 @@
+logue com -> sudo -i -u postgres
+
+man createuser -> acessa as informações que mostra os comandos disponiveis para criação de um novo usuario
+
+comandos basicos: -d(criar bancos) P(pedir senha) s(super usuario)   ou seja ficaria assim: dPs
+
+depois de criar o usuario precisamos configurar o postgres novamente para que ele exija sempre a senha
+
+com isso iremos acessar -> sudo nano /etc/postgresql/12/main/pg_hba.conf
+
+e deopis vamos colocar dessa forma:
+# Database administrative login by Unix domain socket
+local   all             postgres                                md5
+local   all             cadis                                   md5
+
+
+sempre que criarmos um novo usario e quisermos que ele acesse com senha e não com peer, devemos coloca-lo ai.
+
+depois restarte o postgre -> sudo systemctl restart postgresql
+
+para logar com o novo usuario -> psql -U cadis postgres, e coloque a senha
+(porque tenho que por o 'postgres' pois ele tenta logar o usuario com um banco de dados existente !)
+
+
+
+-------------------------------------------------
+excluir usuario
+
+
+man dropuser -> acessa as informações que mostra os comandos disponiveis para remover um usuario
+
+logue com -> sudo -i -u postgres
+
+dropuser cadis -> vai remover o 'cadis'
