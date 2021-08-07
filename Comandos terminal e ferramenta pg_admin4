@@ -1,0 +1,31 @@
+*** Criando database ****
+CREATE DATABASE nome_banco
+WITH
+OWNER = proprietario
+ENCODING = "UTF-8" (ou outro idioma)
+LC_COLLATE = 'pt_BR.UTF-8'
+LC_CTYPE = 'pt_BR.UTF-8'
+TABLESPACE = pg_default
+CONNECTION LIMIT -1; (-1 = ilimitada)
+
+//Tudo acima é apenas um comando, o WITH especifica algumas coisas desse banco de dados (porém tudo acima é opçãp padrão, apenas com o CREATE DATABASE nome_banco ja criaria elas)
+//apenas coloquei para demonstra que podemos mudar, porém existem bem mais comandos que devo explorar
+
+//======================================================================================================================================================
+
+**** Excluindo database ****
+DROP DATABASE nome_database; -> exclui a database
+
+//======================================================================================================================================================
+
+**** Comandos ****
+\l -> lista os bancos de dados existente e os privilegios de acesso do usuario a esses bancos
+
+GRANT ALL ON DATABASE banco_teste TO vitorcadis; -> da acesso ao usuario 'vitorcadis' total ao banco de dados 'banco_teste'
+GRANT -> digite Grant mais o comando que voce quer dar privilegios a um usuario do postgres
+
+//======================================================================================================================================================
+
+**** Comandos da ferramenta pg_admin4 ****
+TOOS > QUERY TOOLS -> vai apresentar a tela para podermos digitar comandos (aperte o icone de play para roda-los)
+SELECT datname FROM pg_database; -> vai listar todos os bancos de dados criados
