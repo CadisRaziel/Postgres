@@ -1,0 +1,40 @@
+**** Criando tabela ****
+CREATE TABLE clientes (
+	id_cliente INT PRIMARY KEY,
+	nome_cliente VARCHAR(20) NOT NULL,
+	sobrenome_cliente VARCHAR(40) NOT NULL
+ );
+ 
+ CREATE TABLE produtos (
+	id_produto INT PRIMARY KEY,
+	nome_produto VARCHAR(30) NOT NULL,
+	descricao TEXT NULL,
+	preco NUMERIC CHECK(preco > 0) NOT NULL,
+	qtde_estoque SMALLINT DEFAULT 0
+);
+
+CREATE TABLE pedidos(
+	id_pedido SERIAL PRIMARY KEY,
+	id_cliente INT NOT NULL REFERENCES clientes(id_cliente),
+	id_produto INT NOT NULL,
+	qtde_vendida SMALLINT NOT NULL,
+	FOREIGN KEY(id_produto) REFERENCES produtos(id_produto)
+);
+
+** Posso criar a chave estrangeira de duas formas ** (chave estrangeira conecta as tabelas)
+// FOREIGN KEY(id_produto) REFERENCES produtos(id_produto) -> ou no final da tabela eu coloco o REFERENCES, como a tabela pedidos criada acima
+//id_cliente INT NOT NULL REFERENCES clientes(id_cliente) -> REFERENCES cria chave estrangeira conectando a tabela 'pedidos' a tabela 'clientes'
+
+  
+  //PRIMARY KEY -> chave primaria
+  //VARCHAR(20) -> string com 20 caracteres
+  //NOT NUL -> não pode ser nulo
+  //TEXT -> permite digitar quanto testo quiser
+  //NULL -> campo que suporta o NULL (pode deixar sem informação)
+  //NUMERIC -> suporta casas decimais (usado para dinhero)
+  //NUMERIC CHECK(preco > 0) -> vai checar "check" se o preco for maior que 0 (se for maior que 0 ele deixa cadastrado se for menor que 0 ele nao cadastra)
+  //SMALLINT -> numeros inteiro (poucos)
+  //SMALL INT DEFULT 0 -> o defult 0, significa que se eu cadastra um produto novo e nao por a quantidade, ele por padrao(default) vai atribuir o valor 0
+  //SERIAL -> ele automaticamente cria numeros inteiros sequenciais (otimo para colocar em id)
+  //id_cliente INT NOT NULL REFERENCES clientes(id_cliente) -> REFERENCES cria chave estrangeira conectando a tabela 'pedidos' a tabela 'clientes'
+  
