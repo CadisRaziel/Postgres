@@ -1,0 +1,34 @@
+
+**** Numeros ****
+smallint -> inteiros de 2 bytes
+int -> inteiros de 4 bytes
+bigint -> inteiros de 8 bytes
+numeric(Precisão, escala) -> numeros de pontos flutuantes, onde precição = numero de digitos total, escala = numero de casas decimais
+real -> 32 bits, até 6 digitos decimais de precição
+double precision -> 64 bits variavel, ate 15 digitos de precisão
+serial -> 32 bits de tamanho, com sinal, numeros sequenciais (auto incremento)
+big serial -> 64 bits de tamanho, com sinal, numeros sequenciais (auto incremento)
+money -> 64 bits, (para valores monetarios)
+
+**** Strings/textos/caracter ****
+text -> varchar de tamanho ilimitado, tipo para strings
+char(n), character(n) -> caracteres de tamanho fixo
+varchar(n) -> varchar de tamanho limitado
+
+**** Data/hora ****
+date -> 4 bytes, apenas datas, precisão de 1 hora
+time [without time zone] -> 8 bytes, hora sem fuso horario, com precisão de 1 microsegundo
+time with time zone -> 12 byte, armazena data e hora com fuso horario, precisão de 1 microsegundo
+timestamp with time zone -> 8 bytes, armazena data e hora com fuso horario, , precisao de 1 microsegundo
+timestamp [without time zone] -> 8 bytes, armazena data e hora sem fuso horario, precisão de 1 microsegundo
+interval -> 16bytes, armazena faixas de tempo, com precisão de 1 microsegundo
+
+
+**** outros tipos ****
+boolean -> tipo lógico 8 bits - valores true(1/yes/on) - false(0/no/off)
+cidr -> 7 ou 19 bits, endereço de redes IPv4 ou IPv6, como 196.168.14.0/24
+inet -> 7 ou 19 bits, endereço de redes IPv4 ou IPv6, como 196.168.14.0/24
+macaddr -> 6 bytes(48bits), como 00:22:33:44:55:b2 ou 0022.3344.55b2
+Geometric types -> armazena informações relacionadas com figuras geometricas, como linhas, circulos, poligonos, pontos, caminhos, etc..
+tipos de enumeração -> criadas pelo usuario, para conjunto de valores staticos
+tsvector/tsquery -> tipos para busca completa de texto em documentos
