@@ -1,0 +1,54 @@
+//repare que eu preciso por os dados na mesma ordem em que eu especifiquei as colunas
+INSERT INTO nome_tabela(
+	coluna1, coluna2, coluna3
+)
+VALUES(	
+	dado1, dado2, dado3
+);
+//=========================================================================================================================================
+
+//INSERT INTO -> inserir em
+
+//=========================================================================================================================================
+
+
+INSERT INTO clientes (
+	id_cliente, nome_cliente, sobrenome_cliente
+)
+VALUES( 
+	1, 'Vitor', 'Brussolo Zerbato'
+);
+//Observação: caso eu coloque os valores na ordem certinha das colunas, eu nem preciso especificar as colunas (id_cliente, nome_cliente, sobrenome_cliente)
+
+//=========================================================================================================================================
+
+*** Comandos para ver a tabela ****
+SELECT * FROM clientes; -> consulta os dados da tabela 'clientes'
+
+//=========================================================================================================================================
+
+*** inserindo varios dados de uma vez ***
+//da forma abaixo eu posso inserir varios dados de uma vez só, no final eu coloco o ;
+INSERT INTO produtos(
+	id_produto, nome_produto, descricao, preco, qtde_estoque
+)
+VALUES (1, 'notebook', 'notebook muito potente, to colocando uma frase longa pra mostra o text', 1500.99, 20),
+(2, 'mouse', 'mouse para o notebook', 15.00, 10),
+(3, 'teclado', 'teclado para o notebook', 50.00, 30),
+(4, 'webcam', 'webcam para o notebook', 115.00, 5),
+(5, 'mousepad', 'mousepad para o notebook', 5.00, 3);
+
+//=========================================================================================================================================
+
+*** inserindo dado na tabela onde o id é um SERIAL, ou seja nao precisamos coloca-lo ***
+INSERT INTO pedidos (
+	id_cliente, id_produto, qtde_vendida
+)
+VALUES(1, 2, 1),
+(5, 4, 5),
+(3, 3, 25);
+
+//como ele é SERIAL o id_cliente a gente nao especifica ele no INSERT INTO, pois ele é criado automatico
+//1, 2, 1 -> cliente de id_cliente 1, comprou o produto de id_produto 2, qtde_estoque 1(comprou 1) 
+//(5, 4, 5) -> cliente de id_cliente 5, comprou o produto de id_produto 4, qtde_estoque 5(comprou 5) 
+//(3, 3, 25) ->  cliente de id_cliente 3, comprou o produto de id_produto 3, qtde_estoque 25(comprou 25)
